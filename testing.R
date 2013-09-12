@@ -1,4 +1,5 @@
 library(xpose4)
+library(ggplot2)
 
 data(simpraz.xpdb)
 xpdb <- simpraz.xpdb
@@ -23,6 +24,8 @@ wres.vs.idv(xpdb) # standard xpose version
 
 environment(wres.vs.idv) <- .GlobalEnv
 wres.vs.idv(xpdb) # ggplot version
+tmp <- wres.vs.idv(xpdb)
+tmp+geom_line(aes(group=ID))
 
 rm("wres.vs.idv")
 wres.vs.idv(xpdb) # xpose lattice version
