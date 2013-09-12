@@ -308,7 +308,7 @@ xpose.plot.default <- function (
     }
     
     ## plotting (ggplot)
-    xplot <- ggplot2::ggplot(object@Data, ggplot2::aes_string(x=x, y=y)) + 
+    xplot <- ggplot2::ggplot(data, ggplot2::aes_string(x=x, y=y)) + 
       ggplot2::geom_point()  
     
 #     xplot <- xyplot(formula(formel), data, obj = object, 
@@ -350,4 +350,4 @@ xpose.plot.default <- function (
   }
 }
 
-environment(xpose.plot.default) <- as.environment("package:xpose4generic")
+#environment(xpose.plot.default) <- as.environment("package:xpose4generic")
