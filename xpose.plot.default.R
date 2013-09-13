@@ -46,6 +46,8 @@ xpose.plot.default <- function (
           y.cex = NULL, 
           main.cex = NULL, 
           mirror.internal = list(strip.missing = missing(strip)), 
+          # ggplot2 specific
+          facet = "wrap",
           ...) 
 {
   if (!(class(use.xpose.factor.strip.names) == "logical" & 
@@ -165,8 +167,7 @@ xpose.plot.default <- function (
       onlyfirst = FALSE
       if (is.null(by)) {
         by <- "ind"
-      }
-      else {
+      } else {
         by <- c("ind", by)
       }
       y <- "values"
@@ -310,6 +311,23 @@ xpose.plot.default <- function (
     ## plotting (ggplot)
     xplot <- ggplot2::ggplot(data, ggplot2::aes_string(x=x, y=y)) + 
       ggplot2::geom_point()  
+    if (!is.null(by)) {
+      if (length(by) == 1) {
+        if (facet == "wrap") {
+          facets <- facet_grid(paste(". ~", by))             
+        } else {
+          facets <- facet_grid(paste(". ~", by))             
+        }
+      } 
+      if (length(by) > 2) {
+        cat ("Warning: only 2 facets allowed in this implementation of xpose.plot.default, using first two.\n")
+        by <- by[1:2]
+      }
+      if (length(by) == 2) {
+        facets <- facet_grid(paste(by[1], "~", by[2])) 
+      }
+      xplot <- xplot + facets
+    }
     
 #     xplot <- xyplot(formula(formel), data, obj = object, 
 #                     prepanel = function(x, y) {
