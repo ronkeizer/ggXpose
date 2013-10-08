@@ -22,7 +22,25 @@ Status
 Planned
 --------
 * ``xpose.plot.default()``: if implemented, most Xpose plots should be covered
+* ``xpose.panel.default()``: Panel functionality should be moved to ``xpose.plot.default()``
+* ``xpose.plot.histogram()``: Histogram plots
+* ``xpose.panel.histogram()``: Panel functionality should be moved to ``xpose.plot.histogram()``
+* ``xpose.plot.bw()``: bw plots
+* ``xpose.panel.bw()``: Panel functionality should be moved to ``xpose.plot.bw()``
+* ``xpose.plot.qq()``: qq plots
+* ``xpose.panel.qq()``: Panel functionality should be moved to ``xpose.plot.qq()``
+* ``xpose.plot.splom()``: splom plots
+* ``xpose.panel.splom()``: Panel functionality should be moved to ``xpose.plot.splom()``
 * ``ind.plots()``
+* ``xpose.VPC.categorical()``: uses ``xyplot()`` directly
+* plots in ``bootgam.plots.R``
+* ``data.checkout()``
+* ``dOFV.vs.id()``: uses ``xyplot()`` directly
+* ``npc.coverage()``: uses ``xyplot()`` directly
+* ``xp.akaike.plot()``: uses ``dotplot()`` directly
+* ``xp.plot()``: uses lattice plots directly
+* Any other GAM plots
+* All other plots from xpose4specific will hopefully work unchanged once the above are translated
 * ...
 
 
