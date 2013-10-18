@@ -66,4 +66,18 @@ dv.vs.pred.by.cov(xpdb, grid=TRUE, ids=TRUE)
 
 ## Feature: ...
 
+####################################################################################
+## VPC example
+setwd("vpc_example")
+# lattice:
+library(xpose4)
+xpose.VPC(vpc.info="vpc_run5/vpc_results.csv",
+          vpctab="vpc_run5/vpctab5") 
+
+# ggplot2
+source("../xpose.VPC.gg.R")
+xpose.VPC(vpc.info="vpc_run5/vpc_results.csv",
+          vpctab="vpc_run5/vpctab5") 
+
+
 

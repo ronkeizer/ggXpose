@@ -311,6 +311,9 @@ xpose.plot.default <- function (
     ## plotting (ggplot)
     xplot <- ggplot2::ggplot(data, ggplot2::aes_string(x=x, y=y)) + 
       ggplot2::geom_point()  
+    if (!is.null(PI.ci)) {
+      if (PI.ci == "area" || PI.)
+    }
     if (!is.null(by)) {
       if (length(by) == 1) {
         if (facet == "wrap") {
